@@ -1,4 +1,4 @@
-package lock;
+package com.akira.concurrency.lock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;

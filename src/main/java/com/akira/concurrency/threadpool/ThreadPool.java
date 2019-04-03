@@ -1,4 +1,4 @@
-package threadpool;
+package com.akira.concurrency.threadpool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;

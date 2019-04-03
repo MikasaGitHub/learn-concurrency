@@ -1,4 +1,4 @@
-package lock;
+package com.akira.concurrency.lock;
 
 public class Demo1 {
 
