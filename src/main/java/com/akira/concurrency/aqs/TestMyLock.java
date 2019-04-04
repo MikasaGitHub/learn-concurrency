@@ -18,7 +18,7 @@ public class TestMyLock {
 	public Integer getNext() {
 		lock.lock();
 		try {
-			Thread.sleep(300);
+			Thread.sleep(100);
 			return count++;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -40,7 +40,7 @@ public class TestMyLock {
 	}
 	
 	public static void main(String[] args) {
-		ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 6, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+		ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 		
 		TestMyLock test = new TestMyLock();
 		

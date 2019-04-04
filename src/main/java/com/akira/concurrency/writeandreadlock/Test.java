@@ -2,7 +2,7 @@ package com.akira.concurrency.writeandreadlock;
 
 public class Test {
 	public static void main(String[] args) {
-		Read();
+		test();
 	}
 	
 	/**
@@ -70,6 +70,22 @@ public class Test {
 			}
 		}).start();
 		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				System.out.println(d.get("key1"));
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				System.out.println(d.get("key1"));
+			}
+		}).start();
+		
 	}
 	
 	/**
@@ -115,4 +131,59 @@ public class Test {
 		}).start();
 		
 	}
+	
+	public static void test() {
+		Demo d = new Demo();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("1");
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("2");
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("3");
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("4");
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("5");
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				d.readWrite("6");
+			}
+		}).start();
+		
+	}
+	
+	
 }
