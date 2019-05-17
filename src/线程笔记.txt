@@ -33,5 +33,8 @@
 	
 11. 同步队列:进行了lock方法的线程进入了同步队列。
 	等待队列:Condition 的线程 进行了await 进入等待队列，同时因为释放锁从同步队列移出
+
+12. Callable和Runnable的区别: Runnable run方法是由线程调用的.在run方法是异步执行的.
+							  Callable 的call 不是异步执行,是由Future的run方法调用的
    		
  
